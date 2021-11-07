@@ -1,1 +1,7 @@
-.aboutPic{width: 18% ;}
+.aboutPic{width: 22% ;}
+.slidePic{
+    opacity:1;
+}
+.slide2Text{
+    color:rgb(0, 0, 0)
+}
