@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ali's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
+
 <body>
     <!--Navbar-->
-   <nav class= "navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3 ">
-    <div class="container">
-        <a href="#" class="navbar-brand">Ali T Pirposhteh [Portfolio]</a>
-        <button 
-            class="navbar-toggler" 
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navmenu"
-        >
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link active" >Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact-me" class="nav-link">Contact Me</a>
-                </li>
+    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3 ">
+        <div class="container">
+            <a href="#" class="navbar-brand">Ali T Pirposhteh [Portfolio]</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact-me" class="nav-link">Contact Me</a>
+                    </li>
 
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>   
 
-   </nav> 
+    </nav>
 
-   <!--Image slider
+    <!--Image slider
     <div id="slides" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#slides" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -89,67 +91,72 @@
 
 </div>-->
 
-<div id="slides" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#slides" data-bs-slide-to="0" class="active"  aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#slides" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#slides" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/slide1.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item slidePic">
-        <img src="img/slide2.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption">
-            <h2 class=slide2Text>Learn a little about me</h2>
+    <div id="slides" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slides" data-bs-slide-to="0" class="active"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#slides" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#slides" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/slide3.jpg" class="d-block w-100" alt="...">
-      </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item slidePic">
+                <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                    <h2 class=slide2Text>Learn a little about me</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/slide3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slides" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slides" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#slides" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#slides" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  
-  
 
-   <!--about-->
+
+
+    <!--about-->
 
     <section class="bg-dark text-light p-5 text-center text-sm-start">
         <div class="container">
             <div class="d-sm-flex align-items-center justify-content-between">
                 <div>
-                    <h1>  A little<span class="text-primary"> about me</span></h1>
+                    <h1> A little<span class="text-primary"> about me</span></h1>
                     <p class="lead">
-                        Born in Tehran and raised in London, I have overcome many hurdles in my life however perseverance has been a fundamental aspect to my ethos.
+                        Born in Tehran and raised in London, I have overcome many hurdles in my life however
+                        perseverance has been a fundamental aspect to my ethos.
                         I am 20 years old and strive to expand my knowledge in full stack development.
                         I hope to enrich people's lives by utilising the power of code.
 
-                    </p> 
+                    </p>
                 </div>
                 <img class=" aboutPic img-fluid d-none d-sm-block" src="img/about.jpg" alt="">
                 <!--<img class="img-fluid w-25 d-none d-sm-block" src="img/about2.jpg" alt="">-->
-            </div >
-        
-            
+            </div>
+
+
         </div>
     </section>
 
     <!--Experience-->
-    <section class="p-4">
+    <section class="p-5">
         <div class="container">
             <div class="text-center">
-                <h1 class="p-5">My Experience/<span class="text-primary">Completed Programmes</span></h1>
+                <div class="p-5">
+                    <h1>My Experience/<span class="text-primary">Completed Programmes</span></h1>
+                    <hr>
+                </div>
             </div>
-            
+
             <div class="row text-center g-4">
                 <div class="col-md">
                     <div class="card bg-dark text-light">
@@ -166,7 +173,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md">
                     <div class="card bg-secondary text-light">
                         <div class="card-body text-center">
@@ -182,7 +189,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md">
                     <div class="card bg-dark text-light">
                         <div class="card-body text-center">
@@ -203,13 +210,167 @@
     </section>
 
     <!--Coding languages-->
-   <section class="p-1">
-       <div class="container">
-        <div></div>
-       </div>
-   </section>
+    <section class="p-5 ">
+        <div class="text-center p-5">
+            <h1>Here are some of the [<span class="text-primary">Languages</span>] I know</h1>
+            <hr>
+        </div>
+        <div class="container-fluid">
+            <div>
+                <div class="row d-sm-flex pb-4">
+                    <div class="col-xs-12 col-sm-3 col-md-4 p-4 text-center">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                        <p>I have been building my websites using the latest version of HTML</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-4 p-4 text-center">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                        <p>I have been using CSS3 to stylise and professionally develop my websites.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-4 p-4 text-center">
+                        <i class="fab fa-bootstrap"></i>
+                        <h3>Bootstrap</h3>
+                        <p>This CSS framework has allowed me to develop websites in a streamline and effecient manner
+                            alongside CSS3.</p>
+                    </div>
+                </div>
+                <div class="row d-sm-flex">
+                    <div class="col-xs-12 col-sm-3 col-md-4 p-4 text-center">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p>I have grasped the fundemtals of JavaScript and refined my knowledge in Object Oriented
+                            Programing using this language.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-4 p-4 text-center">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                        <p>I have fairly decent understanding of this language. I am completely self taught in Python
+                            and it is the first programing language I learnt. </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-4 p-4 text-center">
+                        <img src="https://img.icons8.com/color/75/000000/typescript.png" />
+                        <h3>TypeScript</h3>
+                        <p> TypeScript is a strict syntactical superset of JavaScript thus it was not too difficult to
+                            grasp the fundemntals. </p>
+                    </div>
+                </div>
+                <div class="row d-sm-flex">
+                    <div class="col-xs-12 col-sm-3 col-md-6 p-20 text-center">
+                        <img src="https://img.icons8.com/color/75/000000/ruby-programming-language.png" />
+                        <h3>Ruby</h3>
+                        <div class="boRow">
+                            <p>I have grasped the fundemtals of JavaScript and refined my knowledge in Object Oriented
+                                Programing using this language.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-6 p-20 text-center">
+                        <img src="https://img.icons8.com/nolan/75/cs.png"/>
+                        <h3>C#</h3>
+                        <div class="boRow">
+                            <p>I have grasped the fundemtals of JavaScript and refined my knowledge in Object Oriented
+                                Programing using this language.</p>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </section>
+
+    <!--Project Sections-->
+    <section id="Projects" class="p-5 bg-dark text-light">
+        <div class="container p-5">
+            <div class="text-center">
+                <h1>Showcase of my <span class="text-primary">[Projects]</span></h1>
+                <hr class="light">
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Space Invaders Game</h2>
+                    <p class="lead">waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle
+                    </p>
+                </div>
+                <div class="col-md">
+                    <img src="..." class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Projects" class="p-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Horse Racing Gaming</h2>
+                    <p class="lead">waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle
+                    </p>
+                </div>
+                <div class="col-md">
+                    <img src="..." class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Projects" class="p-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Lazatus -Choose your own adventure Game</h2>
+                    <p class="lead">waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle
+                    </p>
+                </div>
+                <div class="col-md">
+                    <img src="..." class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Projects" class="p-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>Splitter</h2>
+                    <p class="lead">waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle waffle
+                    </p>
+                </div>
+                <div class="col-md">
+                    <img src="..." class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Contact footer-->
+    <footer class="bg-dark text-light">
+        <div class="container p-5 ">
+            <hr class="light">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+
+                    <h3>Contact Me</h3>
+
+                </div>
+                <div>
+                    <h6><span class="text-primary">Email:</span> AliPirposhteh@gmail.com </h6>
+                    <h6><span class="text-primary">Phone number:</span> 07927 180683 </h6>
+                </div>
+                <div>
+                    <h6> <i class="fab fa-github"></i> Github: <a
+                            href="https://github.com/AliTagPir">github.com/AliTagPir</a> </h6>
+                    <h6> <i class="fab fa-linkedin"></i> Linkedin: <a
+                            href="https://www.linkedin.com/in/alipirposhteh/">www.linkedin.com/in/alipirposhteh/</a>
+                    </h6>
+                </div>
+            </div>
+            <hr class="light">
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

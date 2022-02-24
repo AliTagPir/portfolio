@@ -5,3 +5,36 @@
 .slide2Text{
     color:rgb(0, 0, 0)
 }
+
+
+.fa-html5{
+    color: #e54d26
+}
+.fa-css3-alt{
+    color: #2163af
+}
+.fa-bootstrap{
+    color: #563d7c
+}
+.fa-js{
+    color:#f0db4f
+}
+.fa-python{
+    color: #4B8BBE
+}
+.fa-html5, .fa-css3-alt, .fa-bootstrap, .fa-js, .fa-python{
+    font-size: 4em;
+}
+.tsIcon{
+    width: 66px;
+}
+.fa-github, .fa-linkedin{
+    font-size: 2em;
+}
+.cSharp{
+    color: blueviolet;
+}
+
+.boRow{
+    padding: 0% 15% 0% 15%;
+}
