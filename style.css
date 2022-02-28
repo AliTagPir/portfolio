@@ -5,8 +5,12 @@
 .slide2Text{
     color:rgb(0, 0, 0)
 }
+/*card section*/
 
 
+
+
+ /*icons*/
 .fa-html5{
     color: #e54d26
 }
@@ -31,10 +35,8 @@
 .fa-github, .fa-linkedin{
     font-size: 2em;
 }
-.cSharp{
-    color: blueviolet;
-}
 
 .boRow{
     padding: 0% 15% 0% 15%;
 }
+
