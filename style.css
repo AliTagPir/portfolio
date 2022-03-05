@@ -1,11 +1,59 @@
+/*carousel*/
+.carousel-item {
+    height: 36rem;
+    background: #000;
+    color: white;
+    position: relative;
+    
+
+}
+.container-slide {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 5%;
+    padding-left: 10%;
+}
+.overlay-img{
+    opacity: 0.6;
+}
+
+
+
 .aboutPic{width: 22% ;}
 .slidePic{
     opacity:1;
 }
-.slide2Text{
-    color:rgb(0, 0, 0)
+
+/*acordian*/
+.accordion-button{
+    font-size: inherit;
+    background: #212529;
+    color: white;
 }
-/*card section*/
+.accordion-item{
+    border: 1px solid #212529;
+}
+.accordion-button:not(collapsed) {
+    color: inherit;
+    background: #212529;
+    color: white;
+}
+.accordion-button:not(collapsed)::after {
+    filter: brightness(0%) invert(100%);
+}
+.accordion-body{
+    background: #212529;
+
+}
+.accordion-button:focus {
+    box-shadow: inherit;
+}
+.aboutT{
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
 
 
 
@@ -32,11 +80,21 @@
 .tsIcon{
     width: 66px;
 }
-.fa-github, .fa-linkedin{
+.fGit, .fa-linkedin{
     font-size: 2em;
 }
 
 .boRow{
     padding: 0% 15% 0% 15%;
+}
+
+/* Projects */
+.project-img{
+    max-width: 100%;
+    
+}
+.project-1{
+    margin-left: -2rem;
+    margin-right: -2rem;
 }
 
