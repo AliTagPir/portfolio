@@ -56,6 +56,9 @@
 }
 
 
+/* experience */
+
+
 
 
  /*icons*/
@@ -91,10 +94,14 @@
 /* Projects */
 .project-img{
     max-width: 100%;
-    
+    padding-left: 10%;
 }
 .project-1{
     margin-left: -2rem;
-    margin-right: -2rem;
+    margin-right: -6rem;
 }
 
+/* misc */
+a {
+    text-decoration: none;
+}
