@@ -1,0 +1,220 @@
+/*******Experience CSS ********/
+.experience {
+  padding: 2rem;
+  background-color: #121212; /* Dark theme background */
+  color: #e0e0e0; /* Light text for contrast */
+}
+
+.experience h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #7fa3c9; /* Bright white title */
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem 0;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  max-width: 650px; /* width of the timeline */
+}
+
+/* Continuous vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3rem; /* Slightly adjust to center the line with the dots */
+  width: 2px; /* Line thickness */
+  height: 100%; /* Full height of the timeline */
+  background-color: #444; /* Subtle line color */
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 6rem; /* Adjust for the date and vertical line */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Slightly shifted down */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth animation */
+}
+
+/* When visible */
+.timeline-item.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset position */
+}
+
+/* When hidden (scrolling out of view) */
+.timeline-item.hidden {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Move down slightly */
+}
+/* Staggered animations for nth-child items */
+.timeline-item:nth-child(1) {
+  --delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+  --delay: 0.5s;
+}
+
+.timeline-item:nth-child(3) {
+  --delay: 0.9s;
+}
+
+
+
+/* Timeline circle (dots) */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* Center dot vertically */
+  left: 3.1rem; /* Align with the vertical line */
+  width: 12px; /* Dot size */
+  height: 12px;
+  background-color: #4682b6; /* Purple dot color */
+  border-radius: 50%; /* Circle shape */
+  transform: translate(-50%, -50%); /* Perfectly center the dot */
+}
+
+/* Dates styling */
+.timeline-date {
+  position: absolute;
+  top: 50%; /* Center date vertically relative to the timeline item */
+  left: -10rem; /* Position to the far left */
+  width: 10rem; /* Ensure fixed width for alignment */
+  font-size: 1rem; /* Adjust font size */
+  color: #aaaaaa; /* Subtle gray for dates */
+  text-align: right; /* Right-aligned text */
+  transform: translateY(-50%); /* Vertically center */
+  line-height: 1.4; /* Better spacing for multi-line dates */
+  margin-right: 20px;
+}
+
+/* Timeline content styling */
+.timeline-content {
+  background: #4682b6; /* Dark gray card background */
+  padding: 1rem; /* Space inside the box */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.5rem; /* Job title size */
+  color: #ffffff; /* White text for titles */
+}
+
+.timeline-content h4 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem; /* Company name size */
+  color: #bdbdbd; /* Light gray for company names */
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 1rem; /* Description size */
+  color: #e0e0e0; /* Light gray for descriptions */
+}
+
+/* Icons container */
+.timeline-icons {
+  margin-top: 1rem; /* Space above the icons */
+  display: flex;
+  gap: 0.5rem; /* Space between icons */
+  justify-content: flex-start; /* Align icons to the left */
+  flex-wrap: wrap; /* Wrap icons to the next line if needed */
+}
+
+.timeline-icons .icon {
+  width: 32px; /* Icon size */
+  height: 35px;
+  margin-right: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.timeline-icons .icon:hover {
+  transform: scale(1.2); 
+  opacity: 0.8;
+}
+
+/* Smaller screen calibration */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+
+  .timeline-date {
+    position: relative;
+    color: #ffff;
+    font-weight: 500;
+    left: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+    transform: translateY(0);
+  }
+
+  .timeline-item::after {
+    content: none;
+  }
+}
+/* Large screen adjustments for screens over 2000px */
+@media (min-width: 2000px) {
+  .experience {
+    padding: 4rem; /* Increase padding for extra space */
+  }
+
+  .experience h2 {
+    font-size: 2.5rem; /* Larger title font size */
+  }
+
+  .timeline {
+    max-width: 1000px; /* Increase the timeline width */
+  }
+
+  .timeline-item {
+    margin-bottom: 3rem; /* Increase spacing between items */
+    padding-left: 8rem; /* Extra padding for alignment */
+  }
+
+  .timeline-item::after {
+    width: 16px; /* Larger dots */
+    height: 16px;
+  }
+
+  .timeline-date {
+    font-size: 1.2rem; /* Larger date font size */
+    left: -12rem; /* Adjust position of the date */
+    width: 12rem; /* Increase width for alignment */
+  }
+
+  .timeline-content {
+    padding: 2rem; /* Add extra padding inside content boxes */
+    border-radius: 1rem; /* More rounded corners */
+  }
+
+  .timeline-content h3 {
+    font-size: 1.75rem; /* Larger job title font */
+  }
+
+  .timeline-content h4 {
+    font-size: 1.25rem; /* Larger company name font */
+  }
+
+  .timeline-content p {
+    font-size: 1.1rem; /* Larger description font */
+  }
+
+  .timeline-icons .icon {
+    width: 48px; /* Larger icon size */
+    height: 48px;
+  }
+}
