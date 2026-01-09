@@ -3,7 +3,8 @@ import PortfolioNavbar from './components/Navbar'
 import Banner from './components/Banner'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
-import Footer from './components/Footer'
+
+import Contact from './components/Contact'
 import viteLogo from '/vite.svg'
 import './App.css'
 
@@ -15,7 +16,7 @@ function App() {
       <Banner />
       <Experience />
       <Projects />
-      <Footer />
+      <Contact />
     </div>
   )
 }
