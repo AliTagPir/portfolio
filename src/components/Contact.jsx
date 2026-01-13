@@ -1,11 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Contact.css';
-import linkedinIcon from '../assets/img/linkedin-icon.svg'
-import githubIcon from '../assets/img/github-icon.svg'
+
 
 function Contact() {
     const [isVisible, setIsVisible] = useState(false);
+    const [emailCopied, setEmailCopied] = useState(false);
     const contactRef = useRef(null);
+
+    const handleEmailCopy = () => {
+        const email = 'alipirposhteh@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+        setEmailCopied(true);
+        setTimeout(() => {
+            setEmailCopied(false);
+        }, 2000); // Reset after 2 seconds
+        });
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -53,9 +63,10 @@ function Contact() {
                 </p>
 
                 <div className="contact-methods">
-                    <a href="mailto:alipirposhteh@gmail.com" className="contact-link">
-                        <span>alipirposhteh@gmail.com</span>
-                    </a>
+
+                    <button onClick={handleEmailCopy} className="contact-link contact-button">
+                        <span>{emailCopied ? 'Copied!' : 'alipirposhteh@gmail.com'}</span>
+                    </button>
 
                     <a href="https://www.linkedin.com/in/alipirposhteh/" target="_blank" rel="noopener noreferrer" className="contact-link">
                         <i className="bi bi-linkedin contact-icon"></i>
