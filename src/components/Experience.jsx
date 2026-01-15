@@ -8,26 +8,26 @@ import airflowIcon from "../assets/img/airflow-icon.svg";
 function Experience() {
   const jobs = [
     {
-      title: "Software Engineer",
-      company: "Tech Innovators Inc.",
+      title: "Self Devolopment and Travelling",
+      company: "",
       description:
         "Developed scalable web applications using React and Node.js.",
-      date: "Jan 2020 - Present",
+      date: "Jan 2024 - Present",
       icons: [], // No icons for this job
     },
     {
-      title: "Data Engineer",
-      company: "Data Solutions Co.",
+      title: "Data/Software Engineer Apprentice",
+      company: "Omnicom Media Group",
       description:
         "Designed and maintained ETL pipelines to process large datasets.",
-      date: "Aug 2018 - Dec 2019",
+      date: "Apr 2022 - Jan 2024",
       icons: [pythonIcon, awsIcon, airflowIcon], // SVG paths
     },
     {
-      title: "Intern",
-      company: "Startup Hub",
+      title: "Software Support Consultant",
+      company: "H.A.N.D Technology",
       description: "Collaborated on building an MVP for a mobile app.",
-      date: "May 2017 - Jul 2018",
+      date: "Nov 2021 - Apr 2022",
       icons: [frontjsIcon], // JavaScript icon
     },
   ];

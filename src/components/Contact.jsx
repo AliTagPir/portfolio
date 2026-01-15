@@ -35,7 +35,7 @@ function Contact() {
                 }
             },
             {
-                threshold: 0.3, // Trigger earlier at 30% visibility
+                threshold: 0.4, // Trigger earlier at 30% visibility
                 rootMargin: '0px' // Remove buffer for more natural behavior
             }
         );
