@@ -1,15 +1,15 @@
 /*******Experience CSS ********/
 .experience {
   padding: 2rem;
-  background-color: #121212; /* Dark theme background */
-  color: #e0e0e0; /* Light text for contrast */
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 .experience h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  color: #7fa3c9; /* Bright white title */
+  text-align: left;
+  margin: 2rem 0rem 8rem 26rem;
+  font-size: 3rem;
+  color: #10b981;
 }
 
 /* Timeline container */
@@ -17,10 +17,15 @@
   position: relative;
   margin: 0 auto;
   padding: 1rem 0;
-  max-width: 600px;
+  max-width: 650px;
   display: flex;
   flex-direction: column;
-  max-width: 650px; /* width of the timeline */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Shift entire timeline left AND expand width when any item is expanded */
+.timeline:has(.timeline-item.expanded) {
+  max-width: 1200px;
 }
 
 /* Continuous vertical line */
@@ -28,86 +33,92 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 3rem; /* Slightly adjust to center the line with the dots */
-  width: 2px; /* Line thickness */
-  height: 100%; /* Full height of the timeline */
-  background-color: #444; /* Subtle line color */
+  left: 3rem;
+  width: 2px;
+  height: 100%;
+  background-color: #444;
 }
 
 /* Timeline items */
 .timeline-item {
   position: relative;
   margin-bottom: 2rem;
-  padding-left: 6rem; /* Adjust for the date and vertical line */
-  opacity: 0; /* Initially hidden */
-  transform: translateY(20px); /* Slightly shifted down */
-  transition: opacity 1s ease, transform 1s ease; /* Smooth animation */
+  padding-left: 6rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Items don't shift individually - the whole timeline shifts */
+.timeline-item.expanded {
+  padding-left: 6rem;
 }
 
 /* When visible */
 .timeline-item.visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0); /* Reset position */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* When hidden (scrolling out of view) */
+/* When hidden */
 .timeline-item.hidden {
-  opacity: 0; /* Fully transparent */
-  transform: translateY(20px); /* Move down slightly */
+  opacity: 0;
+  transform: translateY(20px);
 }
-/* Staggered animations for nth-child items */
-.timeline-item:nth-child(1) {
-  --delay: 0.1s;
-}
-
-.timeline-item:nth-child(2) {
-  --delay: 0.5s;
-}
-
-.timeline-item:nth-child(3) {
-  --delay: 0.9s;
-}
-
-
 
 /* Timeline circle (dots) */
 .timeline-item::after {
   content: "";
   position: absolute;
-  top: 50%; /* Center dot vertically */
-  left: 3.1rem; /* Align with the vertical line */
-  width: 12px; /* Dot size */
+  top: 2rem;
+  left: 3.1rem;
+  width: 12px;
   height: 12px;
-  background-color: #4682b6; /* Purple dot color */
-  border-radius: 50%; /* Circle shape */
-  transform: translate(-50%, -50%); /* Perfectly center the dot */
+  background-color: #10b981;
+  border-radius: 50%;
+  transform: translate(-50%, 0);
+}
+
+/* Dots stay in same position - timeline moves them */
+.timeline-item.expanded::after {
+  left: 3.1rem;
 }
 
 /* Dates styling */
 .timeline-date {
   position: absolute;
-  top: 50%; /* Center date vertically relative to the timeline item */
-  left: -10rem; /* Position to the far left */
-  width: 10rem; /* Ensure fixed width for alignment */
-  font-size: 1rem; /* Adjust font size */
-  color: #aaaaaa; /* Subtle gray for dates */
-  text-align: right; /* Right-aligned text */
-  transform: translateY(-50%); /* Vertically center */
-  line-height: 1.4; /* Better spacing for multi-line dates */
+  top: 2rem;
+  left: -10rem;
+  width: 10rem;
+  font-size: 1rem;
+  color: #aaaaaa;
+  text-align: right;
+  transform: translateY(-50%);
+  line-height: 1.4;
   margin-right: 20px;
+}
+
+/* Dates stay in same position - timeline moves them */
+.timeline-item.expanded .timeline-date {
+  left: -10rem;
 }
 
 /* Timeline content styling */
 .timeline-content {
-  background: rgba(255, 255, 255, 0.02); /* Very subtle white tint */
-  backdrop-filter: blur(10px); /* This creates the glass blur effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  max-width: 600px;
+  width: 100%;
 }
+
 .timeline-content:hover {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -115,115 +126,286 @@
   box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
 }
 
+/* Expanded state - much wider box expanding left and right */
+.timeline-item.expanded .timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  max-width: 1200px;
+  padding: 2.5rem;
+}
+
 .timeline-content h3 {
   margin: 0;
-  font-size: 1.5rem; /* Job title size */
-  color: #ffffff; /* White text for titles */
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: font-size 0.5s ease;
+}
+
+/* Scale up title when expanded */
+.timeline-item.expanded .timeline-content h3 {
+  font-size: 1.8rem;
 }
 
 .timeline-content h4 {
   margin: 0.5rem 0;
-  font-size: 1.1rem; /* Company name size */
-  color: #bdbdbd; /* Light gray for company names */
+  font-size: 1.1rem;
+  color: #bdbdbd;
+  transition: font-size 0.5s ease;
 }
 
-.timeline-content p {
-  margin: 0;
-  font-size: 1rem; /* Description size */
-  color: #e0e0e0; /* Light gray for descriptions */
+/* Scale up company when expanded */
+.timeline-item.expanded .timeline-content h4 {
+  font-size: 1.3rem;
+}
+
+.timeline-description {
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.timeline-description p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  transition: font-size 0.2s ease;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale up description text when expanded */
+.timeline-item.expanded .timeline-description p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.timeline-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Expand indicator */
+.expand-indicator {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #10b981;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-content:hover .expand-indicator {
+  opacity: 1;
 }
 
 /* Icons container */
 .timeline-icons {
-  margin-top: 1rem; /* Space above the icons */
+  margin-top: 1rem;
   display: flex;
-  gap: 0.5rem; /* Space between icons */
-  justify-content: flex-start; /* Align icons to the left */
-  flex-wrap: wrap; /* Wrap icons to the next line if needed */
+  gap: 0.5rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  filter: grayscale(1) brightness(1.2) ;
 }
 
 .timeline-icons .icon {
-  width: 32px; /* Icon size */
+  width: 32px;
   height: 35px;
   margin-right: 5px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .timeline-icons .icon:hover {
-  transform: scale(1.2); 
+  transform: scale(1.2);
   opacity: 0.8;
 }
 
 /* Smaller screen calibration */
 @media (max-width: 768px) {
+  .experience h2 {
+    margin: 0rem 1rem 2.5rem 1rem;
+    font-size: 2rem;
+  }
+
+  .timeline {
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .timeline::before {
+    left: 1rem;
+  }
+
+  .timeline:has(.timeline-item.expanded)::before {
+    left: 1rem;
+  }
+
   .timeline-item {
-    flex-direction: column;
-    padding-left: 2rem;
+    padding-left: 3rem;
+  }
+
+  .timeline-item.expanded {
+    padding-left: 3rem;
+  }
+
+  .timeline-item::after {
+    left: 1rem;
+  }
+
+  .timeline-item.expanded::after {
+    left: 1rem;
+  }
+  .timeline-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .timeline-item.expanded .timeline-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1rem;
+  }
+
+  .timeline-item.expanded .timeline-content h4 {
+    font-size: 1rem;
+  }
+
+
+  .timeline-description p {
+    font-size: 0.95rem;
+  }
+
+  .timeline-item.expanded .timeline-description p {
+    font-size: 0.95rem;
   }
 
   .timeline-date {
+    padding-left: 2rem;
     position: relative;
     color: #ffff;
     font-weight: 500;
     left: 0;
-    text-align: center;
+    text-align: left;
     margin-bottom: 1rem;
     transform: translateY(0);
   }
 
-  .timeline-item::after {
-    content: none;
-  }
-}
-/* Large screen adjustments for screens over 2000px */
-@media (min-width: 2000px) {
-  .experience {
-    padding: 4rem; /* Increase padding for extra space */
-  }
-
-  .experience h2 {
-    font-size: 2.5rem; /* Larger title font size */
-  }
-
-  .timeline {
-    max-width: 1000px; /* Increase the timeline width */
-  }
-
-  .timeline-item {
-    margin-bottom: 3rem; /* Increase spacing between items */
-    padding-left: 8rem; /* Extra padding for alignment */
-  }
-
-  .timeline-item::after {
-    width: 16px; /* Larger dots */
-    height: 16px;
-  }
-
-  .timeline-date {
-    font-size: 1.2rem; /* Larger date font size */
-    left: -12rem; /* Adjust position of the date */
-    width: 12rem; /* Increase width for alignment */
+  .timeline-item.expanded .timeline-date {
+    left: 0;
   }
 
   .timeline-content {
-    padding: 2rem; /* Add extra padding inside content boxes */
-    border-radius: 1rem; /* More rounded corners */
+    padding-top: 4rem;
+    max-width: 100%;
+    z-index: -1;
+  }
+  .timeline-content:hover {
+    transform: translateY(0px);
+  }
+
+  .timeline-item.expanded .timeline-content {
+    max-width: 100%;
+  }
+}
+
+/* Large screen adjustments */
+@media (min-width: 2000px) {
+  .experience {
+    padding: 4rem;
+  }
+
+  .experience h2 {
+    font-size: 4rem;
+  }
+
+  .timeline {
+    max-width: 1000px;
+  }
+
+  .timeline:has(.timeline-item.expanded) {
+    max-width: 1600px;
+  }
+
+  .timeline::before {
+    left: 4rem;
+  }
+
+  .timeline-item {
+    margin-bottom: 3rem;
+    padding-left: 8rem;
+  }
+
+  .timeline-item.expanded {
+    padding-left: 8rem;
+  }
+
+  .timeline-item::after {
+    width: 16px;
+    height: 16px;
+    left: 4.1rem;
+  }
+
+  .timeline-item.expanded::after {
+    left: 4.1rem;
+  }
+
+  .timeline-date {
+    font-size: 1.2rem;
+    left: -12rem;
+    width: 12rem;
+  }
+
+  .timeline-item.expanded .timeline-date {
+    left: -12rem;
+  }
+
+  .timeline-content {
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 800px;
+  }
+
+  .timeline-item.expanded .timeline-content {
+    max-width: 1400px;
+    padding: 3rem;
   }
 
   .timeline-content h3 {
-    font-size: 1.75rem; /* Larger job title font */
+    font-size: 1.75rem;
+  }
+
+  .timeline-item.expanded .timeline-content h3 {
+    font-size: 2.2rem;
   }
 
   .timeline-content h4 {
-    font-size: 1.25rem; /* Larger company name font */
+    font-size: 1.25rem;
   }
 
-  .timeline-content p {
-    font-size: 1.1rem; /* Larger description font */
+  .timeline-item.expanded .timeline-content h4 {
+    font-size: 1.5rem;
+  }
+
+  .timeline-description p {
+    font-size: 1.1rem;
+  }
+
+  .timeline-item.expanded .timeline-description p {
+    font-size: 1.3rem;
   }
 
   .timeline-icons .icon {
-    width: 48px; /* Larger icon size */
+    width: 48px;
     height: 48px;
   }
 }
